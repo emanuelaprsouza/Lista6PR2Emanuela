@@ -54,14 +54,14 @@ namespace Lista6PR2Emanuela
                     break;
 
                 case 2:
-                    string nome, nomemenor ="", nomemaior ="";
+                    string nome, nomemenor =" ", nomemaior =" ";
                     int numitens, parada = 2;
                     float preco, menorvalor, maiorvalor;
 
                     menorvalor = float.MaxValue;
                     maiorvalor = float.MinValue;
 
-                    for (; parada != 1;)//laço infinito
+                    for ( ; parada != 1; )//laço infinito
                     {
                         Console.WriteLine("Informe o nome do produto: ");
                         nome = Console.ReadLine();
@@ -94,8 +94,35 @@ namespace Lista6PR2Emanuela
 
                     break;
 
-                case 3:
+                case 3: Double nota, peso,notat;
 
+                    Console.WriteLine(" quantas notas terão neste bimestre:  ");
+                    nota = Double.Parse(Console.ReadLine());
+                    notat = 0;
+                    for (i = 0; i < nota; i++)
+                    {
+                        Console.WriteLine(" qual o peso das notas: (ex: 3) ");
+                        peso = Double.Parse(Console.ReadLine());
+                        notat = notat + peso;
+                    }
+
+                    notat = notat * 10;
+
+                    if(notat > 100)
+                        {
+                        Console.WriteLine("As notas são superior a 100 ");
+                        break;
+                    }
+                    if(notat == 100)
+                        {
+                        Console.WriteLine("As notas são iguais a 100 ");
+                        break;
+                    }
+                    if(notat < 100)
+                        {
+                        Console.WriteLine("As notas são inferior a 100 ");
+                        break;
+                    }
 
                     break;
 
@@ -205,43 +232,43 @@ namespace Lista6PR2Emanuela
                             Console.WriteLine(" Pernambuco");
                             break;
 
-                        case 18:
+                        case "PI":
                             Console.WriteLine("Piauí");
                             break;
 
-                        case 19:
+                        case "RJ":
                             Console.WriteLine(" Rio de Janeiro");
                             break;
 
-                        case 20:
+                        case "RN":
                             Console.WriteLine(" Rio Grande do Norte");
                             break;
 
-                        case 21:
+                        case "RS":
                             Console.WriteLine(" Rio Grande do Sul");
                             break;
 
-                        case 22:
+                        case "RO":
                             Console.WriteLine(" Rondônia ");
                             break;
 
-                        case 23:
+                        case "RR":
                             Console.WriteLine(" Roraima");
                             break;
 
-                        case 24:
+                        case "SC":
                             Console.WriteLine(" Santa Catarina ");
                             break;
 
-                        case 25:
+                        case "SP":
                             Console.WriteLine(" São Paulo ");
                             break;
 
-                        case 26:
+                        case "SE":
                             Console.WriteLine(" Sergipe");
                             break;
 
-                        case 27:
+                        case "TO":
                             Console.WriteLine(" Tocantins ");
                             break;
 
