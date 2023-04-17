@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -94,35 +95,28 @@ namespace Lista6PR2Emanuela
 
                     break;
 
-                case 3: Double nota, peso,notat;
+                 case 3:
+                    float peso, totalpesos = 0;
 
-                    Console.WriteLine(" quantas notas terão neste bimestre:  ");
-                    nota = Double.Parse(Console.ReadLine());
-                    notat = 0;
-                    for (i = 0; i < nota; i++)
+                    Console.WriteLine("Digite o total de avaliações: ");
+                    int avaliação = int.Parse(Console.ReadLine());
+
+                    for( i = 1; i<= avaliação; i++)
                     {
-                        Console.WriteLine(" qual o peso das notas: (ex: 3) ");
-                        peso = Double.Parse(Console.ReadLine());
-                        notat = notat + peso;
-                    }
+                        Console.WriteLine("Digite os pesos das notas : ");
+                        peso = float.Parse(Console.ReadLine());
 
-                    notat = notat * 10;
+                        totalpesos = peso;
+                    }
+                   
+                    if (totalpesos < 100)
+                        Console.WriteLine("Nota insuficiente");
 
-                    if(notat > 100)
-                        {
-                        Console.WriteLine("As notas são superior a 100 ");
-                        break;
-                    }
-                    if(notat == 100)
-                        {
-                        Console.WriteLine("As notas são iguais a 100 ");
-                        break;
-                    }
-                    if(notat < 100)
-                        {
-                        Console.WriteLine("As notas são inferior a 100 ");
-                        break;
-                    }
+                    else if (totalpesos > 100)
+                        Console.WriteLine("Nota superior");
+
+                    else
+                        Console.WriteLine("Nota atingida");
 
                     break;
 
@@ -278,6 +272,131 @@ namespace Lista6PR2Emanuela
                     break;
 
                 case 5:
+                    int mes, dia;
+
+                    Console.WriteLine("Digite um número entre 1 e 12: ");
+                    mes = int.Parse(Console.ReadLine());
+                    switch (mes)
+                    {
+                        case 1:
+                            Console.WriteLine("A estação é verão");
+                            break;
+                       
+                        case 2:
+                            Console.WriteLine("A estação é verão");
+                            break;
+                      
+                        case 3:
+                            Console.WriteLine("me informe o dia:");
+                            dia = int.Parse(Console.ReadLine());
+                            if (dia >= 20)
+                                Console.WriteLine("a estaçao é outono");
+                            else
+                                Console.WriteLine("A estação é verão");
+                            break;
+                        
+                        case 4:
+                            Console.WriteLine("A estação é outono");
+                            break;
+                       
+                        case 5:
+                            Console.WriteLine("A estação é outono");
+                            break;
+                        
+                        case 6:
+                            Console.WriteLine("me informe o dia:");
+                            dia = int.Parse(Console.ReadLine());
+                            if (dia >= 20)
+                                Console.WriteLine("a estaçao é inverno");
+                            else
+                                Console.WriteLine("A estação é outono");
+                            break;
+                       
+                        case 7:
+                            Console.WriteLine("a estaçao é inverno");
+                            break;
+                       
+                        case 8:
+                            Console.WriteLine("a estaçao é inverno");
+                            break;
+                       
+                        case 9:
+                            Console.WriteLine("me informe o dia:");
+                            dia = int.Parse(Console.ReadLine());
+                            if (dia >= 22)
+                                Console.WriteLine("a estaçao é primavera");
+                            else
+                                Console.WriteLine("A estação é inverno");
+                            break;
+                       
+                        case 10:
+                            Console.WriteLine("a estaçao é primavera");
+                            break;
+                      
+                        case 11:
+                            Console.WriteLine("a estaçao é primavera");
+                            break;
+                     
+                        case 12:
+                            Console.WriteLine("me informe o dia:");
+                            dia = int.Parse(Console.ReadLine());
+                            if (dia >= 21)
+                                Console.WriteLine("a estaçao é verão");
+                            else
+                                Console.WriteLine("A estação é primavera");
+                            break;
+                    }
+
+                    break;
+
+                case 6:
+                    float pesoh, altura, imc;
+                   
+                    Console.WriteLine("informe sua altura:");
+                    altura = float.Parse(Console.ReadLine());
+                   
+                    Console.WriteLine("informe o seu peso:");
+                    pesoh = float.Parse(Console.ReadLine());
+                   
+                    imc = pesoh / (altura * altura);
+
+                    if (imc < 18.5)
+                        Console.WriteLine("esta abaixo do peso");
+                 
+                    else if (imc == 18.5 && imc == 34.90)
+                        Console.WriteLine("Peso normal");
+                   
+                    else if (imc == 25.0 && imc == 29.9)
+                        Console.WriteLine("Sobrepeso");
+                   
+                    else if (imc == 30.0 && imc == 34.9)
+                        Console.WriteLine("obesidade grau 1");
+                
+                    else if (imc == 35.0 && imc == 39.9)
+                        Console.WriteLine("obesidade de grau 2");
+                    
+                    else
+                        Console.WriteLine("Obesidade de grau 3(morbita)");
+                    break;
+
+
+                case 7:
+                    float numero;
+                  
+                    Console.WriteLine("digite um numero maior que zero:");
+                    numero = int.Parse(Console.ReadLine());
+                 
+                    Console.WriteLine("Divisores de " + numero + ":");
+
+                    for ( i = 1; i <= numero; i++)
+                    {
+                        if (numero % i == 0)
+                        {
+                            Console.WriteLine(i);
+                        }
+                    }
+                    break;
+
             }
 
             Console.ReadKey();
